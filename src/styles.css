@@ -76,25 +76,29 @@
 
 :root {
   --radius: 1rem;
-  --background: oklch(0.985 0.008 85);
-  --foreground: oklch(0.25 0.03 220);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.25 0.03 220);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.25 0.03 220);
-  --primary: oklch(0.58 0.22 27);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.45 0.08 210);
-  --secondary-foreground: oklch(0.99 0 0);
-  --muted: oklch(0.95 0.015 85);
-  --muted-foreground: oklch(0.5 0.02 220);
-  --accent: oklch(0.86 0.15 88);
-  --accent-foreground: oklch(0.25 0.03 220);
+  --background: oklch(0.93 0.038 78);
+  --foreground: oklch(0.26 0.045 55);
+  --card: oklch(0.97 0.022 82);
+  --card-foreground: oklch(0.26 0.045 55);
+  --popover: oklch(0.97 0.022 82);
+  --popover-foreground: oklch(0.26 0.045 55);
+  --primary: oklch(0.58 0.21 27);
+  --primary-foreground: oklch(0.98 0.012 82);
+  --secondary: oklch(0.42 0.085 185);
+  --secondary-foreground: oklch(0.97 0.022 82);
+  --muted: oklch(0.88 0.035 78);
+  --muted-foreground: oklch(0.45 0.045 55);
+  --accent: oklch(0.85 0.155 88);
+  --accent-foreground: oklch(0.26 0.045 55);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.91 0.015 85);
-  --input: oklch(0.91 0.015 85);
-  --ring: oklch(0.58 0.22 27);
+  --border: oklch(0.8 0.045 75);
+  --input: oklch(0.8 0.045 75);
+  --ring: oklch(0.58 0.21 27);
+  --sand: oklch(0.87 0.062 72);
+  --sand-foreground: oklch(0.26 0.045 55);
+  --ink: oklch(0.3 0.055 45);
+  --ink-foreground: oklch(0.95 0.03 82);
 }
 
 @layer base {
@@ -116,13 +120,19 @@
 @theme inline {
   --shadow-pop: var(--shadow-pop);
   --shadow-pop-lg: var(--shadow-pop-lg);
+  --color-sand: var(--sand);
+  --color-sand-foreground: var(--sand-foreground);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
   --animate-marquee: marquee 28s linear infinite;
   --animate-marquee-rev: marquee 28s linear infinite reverse;
   --animate-spin-slow: spin 18s linear infinite;
   --animate-float: float 6s ease-in-out infinite;
   --animate-wiggle: wiggle 2.4s ease-in-out infinite;
+  --animate-kenburns: kenburns 16s ease-in-out infinite alternate;
 }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes kenburns { 0% { transform: scale(1) translate(0, 0); } 100% { transform: scale(1.12) translate(-2%, -2%); } }
 @keyframes float { 0%,100% { transform: translateY(0) rotate(var(--r,0deg)); } 50% { transform: translateY(-18px) rotate(calc(var(--r,0deg) + 6deg)); } }
 @keyframes wiggle { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
 @keyframes steam { 0% { opacity: 0; transform: translateY(0) scaleX(1); } 40% { opacity: .6; } 100% { opacity: 0; transform: translateY(-60px) scaleX(1.6); } }
