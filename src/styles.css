@@ -107,3 +107,47 @@
     color: var(--color-foreground);
   }
 }
+
+/* Espatto effects */
+:root {
+  --shadow-pop: 6px 6px 0 0 var(--foreground);
+  --shadow-pop-lg: 10px 10px 0 0 var(--foreground);
+}
+@theme inline {
+  --shadow-pop: var(--shadow-pop);
+  --shadow-pop-lg: var(--shadow-pop-lg);
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-marquee-rev: marquee 28s linear infinite reverse;
+  --animate-spin-slow: spin 18s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-wiggle: wiggle 2.4s ease-in-out infinite;
+}
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes float { 0%,100% { transform: translateY(0) rotate(var(--r,0deg)); } 50% { transform: translateY(-18px) rotate(calc(var(--r,0deg) + 6deg)); } }
+@keyframes wiggle { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+@keyframes steam { 0% { opacity: 0; transform: translateY(0) scaleX(1); } 40% { opacity: .6; } 100% { opacity: 0; transform: translateY(-60px) scaleX(1.6); } }
+
+@utility reveal {
+  opacity: 0; transform: translateY(40px) rotate(-1deg);
+  transition: opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1);
+  &.is-in { opacity: 1; transform: none; }
+}
+@utility bg-dots {
+  background-image: radial-gradient(color-mix(in oklab, var(--foreground) 14%, transparent) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+}
+@utility ticket-edge {
+  -webkit-mask: radial-gradient(circle 10px at 50% 0, transparent 98%, #000) 0 0/28px 100% repeat-x;
+  mask: radial-gradient(circle 10px at 50% 0, transparent 98%, #000) 0 -1px/28px 100% repeat-x;
+}
+@utility steam {
+  animation: steam 3s ease-out infinite;
+}
+@utility text-stroke {
+  -webkit-text-stroke: 2px var(--foreground);
+  color: transparent;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+}
