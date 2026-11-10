@@ -6,6 +6,10 @@ import hero from "@/assets/hero-salgados.jpg";
 import coxinha from "@/assets/coxinha.png";
 import suco from "@/assets/suco.png";
 import cafe from "@/assets/cafe.png";
+import fachada from "@/assets/local-fachada.jpg";
+import vitrine from "@/assets/local-vitrine.jpg";
+import mesa from "@/assets/local-mesa.jpg";
+import balcao from "@/assets/local-balcao.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -27,6 +31,13 @@ const tabs = [
   { key: "salgados", label: "Salgados", img: coxinha, bg: "bg-accent", line: "Crocante por fora, recheado por dentro.", items: ["Coxinha de frango", "Pastel de carne", "Esfiha aberta", "Kibe", "Enroladinho", "Risole de queijo"] },
   { key: "cafes", label: "Cafés", img: cafe, bg: "bg-secondary", line: "Passado na hora, do jeito certo.", items: ["Café coado", "Expresso", "Café com leite", "Cappuccino", "Pingado"] },
   { key: "sucos", label: "Sucos", img: suco, bg: "bg-primary", line: "Fruta de verdade, espremida na hora.", items: ["Laranja", "Limão", "Maracujá", "Abacaxi c/ hortelã", "Morango"] },
+] as const;
+
+const place = [
+  { img: fachada, w: 1200, h: 912, alt: "Fachada da Espatto com toldo vermelho e mesas na calçada", cap: "A porta da rua", note: "puxe uma cadeira", span: "md:col-span-7", tilt: "rotate-[-2.5deg]", ar: "aspect-[4/3]" },
+  { img: vitrine, w: 1200, h: 912, alt: "Vitrine cheia de salgados fresquinhos", cap: "A vitrine", note: "escolha o seu", span: "md:col-span-5", tilt: "rotate-[2deg]", ar: "aspect-[4/3]" },
+  { img: mesa, w: 912, h: 1200, alt: "Mesa no canto com café, suco e salgados", cap: "O canto", note: "fica mais gostoso", span: "md:col-span-5", tilt: "rotate-[1.5deg]", ar: "aspect-[3/4]" },
+  { img: balcao, w: 1200, h: 912, alt: "Balcão de madeira com bandejas de salgados", cap: "O balcão", note: "saia quentinho", span: "md:col-span-7", tilt: "rotate-[-1.5deg]", ar: "aspect-[4/3]" },
 ] as const;
 
 function useReveal() {
@@ -70,14 +81,14 @@ function Index() {
       <header className="fixed inset-x-0 top-4 z-30 flex justify-center px-4">
         <nav className="flex items-center gap-1 rounded-full border-2 border-foreground bg-background p-1.5 shadow-pop">
           <img src={logo.url} alt="Espatto" className="h-9 w-9 rounded-full" />
-          {[["Cardápio", "#cardapio"], ["História", "#historia"], ["Visite", "#visite"]].map(([l, h]) => (
+          {[["Cardápio", "#cardapio"], ["O lugar", "#lugar"], ["História", "#historia"], ["Visite", "#visite"]].map(([l, h]) => (
             <a key={h} href={h} className="rounded-full px-3 py-1.5 text-sm font-semibold transition hover:bg-foreground hover:text-background">{l}</a>
           ))}
         </nav>
       </header>
 
       {/* hero */}
-      <section ref={heroRef} onMouseMove={onMove} className="relative flex min-h-[100svh] flex-col items-center justify-center bg-dots px-5 pt-24 pb-16 text-center">
+      <section ref={heroRef} onMouseMove={onMove} className="relative flex min-h-[100svh] flex-col items-center justify-center bg-hero px-5 pt-24 pb-16 text-center">
         <img src={coxinha} alt="" aria-hidden width={816} height={816} className="pointer-events-none absolute left-[4%] top-[18%] w-24 md:w-44" style={par(40)} />
         <img src={cafe} alt="" aria-hidden width={816} height={816} className="pointer-events-none absolute bottom-[10%] left-[10%] w-28 md:w-48" style={par(-30)} />
         <img src={suco} alt="" aria-hidden width={816} height={816} className="pointer-events-none absolute right-[5%] top-[22%] w-24 md:w-40" style={par(-50)} />

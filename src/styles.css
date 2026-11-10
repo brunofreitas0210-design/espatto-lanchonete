@@ -116,10 +116,12 @@
 :root {
   --shadow-pop: 6px 6px 0 0 var(--foreground);
   --shadow-pop-lg: 10px 10px 0 0 var(--foreground);
+  --shadow-pop-ink: 10px 10px 0 0 var(--ink-foreground);
 }
 @theme inline {
   --shadow-pop: var(--shadow-pop);
   --shadow-pop-lg: var(--shadow-pop-lg);
+  --shadow-pop-ink: var(--shadow-pop-ink);
   --color-sand: var(--sand);
   --color-sand-foreground: var(--sand-foreground);
   --color-ink: var(--ink);
