@@ -146,6 +146,22 @@
   background-image: radial-gradient(color-mix(in oklab, var(--foreground) 14%, transparent) 1.2px, transparent 1.2px);
   background-size: 22px 22px;
 }
+@utility bg-hero {
+  background-image:
+    radial-gradient(58% 44% at 14% 8%, color-mix(in oklab, var(--accent) 62%, transparent) 0%, transparent 62%),
+    radial-gradient(46% 38% at 92% 16%, color-mix(in oklab, var(--primary) 26%, transparent) 0%, transparent 66%),
+    radial-gradient(70% 52% at 50% 104%, color-mix(in oklab, var(--secondary) 30%, transparent) 0%, transparent 72%),
+    radial-gradient(color-mix(in oklab, var(--foreground) 14%, transparent) 1.2px, transparent 1.2px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 22px 22px;
+}
+@utility tape {
+  box-shadow: 0 1px 0 color-mix(in oklab, var(--foreground) 18%, transparent);
+  background-image: repeating-linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--foreground) 8%, transparent) 0 2px,
+    transparent 2px 9px
+  );
+}
 @utility ticket-edge {
   -webkit-mask: radial-gradient(circle 10px at 50% 0, transparent 98%, #000) 0 0/28px 100% repeat-x;
   mask: radial-gradient(circle 10px at 50% 0, transparent 98%, #000) 0 -1px/28px 100% repeat-x;
