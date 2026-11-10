@@ -56,7 +56,7 @@ function Index() {
   const [tab, setTab] = useState(0);
   const [m, setM] = useState({ x: 0, y: 0 });
   const heroRef = useRef<HTMLElement>(null);
-  const t = tabs[tab];
+  const t = tabs[tab] ?? tabs[0];
 
   const onMove = (e: React.MouseEvent) => {
     const r = heroRef.current!.getBoundingClientRect();
