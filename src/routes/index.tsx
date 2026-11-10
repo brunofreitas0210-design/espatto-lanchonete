@@ -86,7 +86,7 @@ function Index() {
         <div className="relative">
           <span className="inline-block -rotate-3 rounded-md bg-secondary px-4 py-1.5 text-sm font-bold uppercase tracking-widest text-secondary-foreground shadow-pop">Desde sempre fresquinho</span>
           <h1 className="mt-6 font-script text-[22vw] leading-[0.9] text-primary drop-shadow-[6px_6px_0_var(--foreground)] md:text-[13rem]">Espatto</h1>
-          <p className="mx-auto mt-6 max-w-lg text-lg font-medium md:text-xl">
+          <p className="mx-auto mt-14 max-w-lg text-lg font-medium md:text-xl">
             Cafés, sucos e <span className="relative inline-block"><span className="relative z-10">salgados</span><span className="absolute inset-x-0 bottom-1 -z-0 h-3 -rotate-1 bg-accent" /></span> que fazem a pausa valer a pena.
           </p>
         </div>
@@ -95,7 +95,7 @@ function Index() {
         <a href="#cardapio" className="group relative mt-10 grid h-32 w-32 place-items-center">
           <svg viewBox="0 0 100 100" className="absolute inset-0 animate-spin-slow">
             <defs><path id="c" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" /></defs>
-            <text className="fill-foreground text-[10.5px] font-bold uppercase tracking-[0.2em]"><textPath href="#c">• veja o cardápio • veja o cardápio </textPath></text>
+            <text className="fill-foreground text-[10.5px] font-bold uppercase tracking-[0.2em]"><textPath href="#c">• veja o cardápio • peça já </textPath></text>
           </svg>
           <span className="grid h-14 w-14 place-items-center rounded-full bg-primary text-primary-foreground transition group-hover:scale-110"><ArrowDown className="h-6 w-6 animate-bounce" /></span>
         </a>
