@@ -1,14 +1,20 @@
-# Welcome to your Lovable project
+# Espatto Lanchonete
+
+Lovable, preciso que crie para mim um site para uma lanchonete chamada "Espatto". 
+
+Preciso que crie um visual clean para essa lanchonete. Aqui está o link do instagram para você usar de referencia https://www.instagram.com/espatto_salgados/
+
+O intuito do site é servir apenas como uma demonstração da lanchonete, não será realizado vendas no site.
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/86aac3c7-e92f-45ca-bc26-c3525f86ffc4).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +26,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
