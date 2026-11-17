@@ -118,7 +118,7 @@ function Index() {
       </div>
 
       {/* menu */}
-      <section id="cardapio" className="relative px-5 py-24 md:py-32">
+      <section id="cardapio" className="relative bg-sand px-5 py-24 md:py-32">
         <div className="mx-auto max-w-6xl">
           <h2 className="reveal text-center text-5xl font-bold uppercase md:text-7xl">
             O que tem <span className="font-script font-normal normal-case text-primary">hoje?</span>
@@ -151,6 +151,37 @@ function Index() {
         </div>
       </section>
 
+      {/* the place */}
+      <section id="lugar" className="bg-ink px-5 py-24 text-ink-foreground md:py-32">
+        <div className="mx-auto max-w-6xl">
+          <div className="reveal flex flex-wrap items-end justify-between gap-6">
+            <h2 className="text-5xl font-bold uppercase md:text-7xl">
+              O <span className="font-script font-normal normal-case text-accent">lugar</span>
+            </h2>
+            <p className="max-w-sm text-lg opacity-80">
+              Quatro cantos da casa: a porta, a vitrine, a mesa do canto e o balcão.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-8 md:grid-cols-12">
+            {place.map((p) => (
+              <figure key={p.cap} className={`reveal group relative ${p.span}`}>
+                <span className="tape absolute -top-3 left-1/2 z-10 h-7 w-28 -translate-x-1/2 -rotate-2 rounded-sm bg-accent/85" />
+                <div className={`rounded-2xl border-2 border-background bg-card p-3 shadow-pop-ink transition duration-500 group-hover:-translate-y-2 group-hover:rotate-0 ${p.tilt}`}>
+                  <div className={`overflow-hidden rounded-xl border-2 border-foreground ${p.ar}`}>
+                    <img src={p.img} alt={p.alt} width={p.w} height={p.h} loading="lazy" className="h-full w-full animate-kenburns object-cover" />
+                  </div>
+                  <figcaption className="flex flex-col gap-2 px-2 pb-2 pt-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
+                    <span className="font-script text-3xl leading-[1.25] text-primary md:text-4xl">{p.cap}</span>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-muted-foreground">{p.note}</span>
+                  </figcaption>
+                </div>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* story */}
       <section id="historia" className="bg-secondary px-5 py-24 text-secondary-foreground md:py-32">
         <div className="mx-auto grid max-w-6xl items-center gap-14 md:grid-cols-2">
@@ -173,7 +204,7 @@ function Index() {
       </section>
 
       {/* visit */}
-      <section id="visite" className="bg-dots px-5 py-24 md:py-32">
+      <section id="visite" className="bg-sand bg-dots px-5 py-24 md:py-32">
         <div className="reveal mx-auto max-w-4xl rotate-1 rounded-3xl border-2 border-foreground bg-accent p-8 text-accent-foreground shadow-pop-lg transition hover:rotate-0 md:p-14">
           <h2 className="font-script text-5xl text-primary md:text-7xl">Passa aqui!</h2>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
